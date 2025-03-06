@@ -1,38 +1,260 @@
-.App {
+.custom-navbar {
+  background-color: #f1a2bd;
+  transition: background 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.custom-navbar.scrolled {
+  background: rgba(255, 255, 255, 0.724);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-nav .nav-link {
+  font-size: 18px;
+  color: #333 !important;
+  position: relative;
+  padding-bottom: 5px;
+  transition: color 0.3s ease-in-out;
+}
+
+.navbar-nav .nav-link.active-link {
+  font-weight: bold;
+  color: #c74c75 !important;
+}
+
+.navbar-nav .nav-link.active-link::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: #EC407A;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+/* 🎬 الـ Hero Section */
+.hero-section {
+  background-image: url(../src/assets/hero.jpg);
+  padding: 100px 0;
   text-align: center;
+  height: 100vh;
+  background-color: #fdf8f8;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1, p, .about-me {
+  color: #ffffff !important;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h1 {
+  font-size: 3rem !important;
+  font-weight: bold;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.about-me {
+  font-size: 1rem;
+  font-weight: 500;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.buttons .glow-pink {
+  background-color: #ec407a;
+  border: none;
+  color: white;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 8px;
+  transition: 0.3s;
+  box-shadow: 0 0 15px rgba(236, 64, 122, 0.5);
+}
+
+.buttons .glow-pink:hover {
+  background-color: #d81b60;
+  box-shadow: 0 0 20px rgba(216, 27, 96, 0.7);
+}
+
+.buttons .btn-outline-light {
+  border-color: #ec407a;
+  color: #ec407a;
+}
+
+.buttons .btn-outline-light:hover {
+  background-color: #ec407a;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.text-highlight {
+  color: #EC407A;
+  font-weight: bold;
 }
 
-@keyframes App-logo-spin {
+.role-text {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #ffffff !important;
+  margin-bottom: 1rem;
+}
+
+/* 👤 الـ About Section */
+.about-section {
+  padding: 80px 0;
+  background-color: #ffdef6;
+  text-align: center;
+}
+
+.section-title, .about-text, .about-btn, .about-img {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #000000;
+}
+
+.info > p {
+  font-size: 1.2rem;
+  color: #000000 !important;
+  max-width: 700px;
+  margin: 20px auto;
+  line-height: 1.6;
+  animation-delay: 0.3s;
+}
+
+.about-btn {
+  background-color: #ec407a !important;
+  border: none !important;
+  color: white;
+  font-weight: bold;
+  padding: 10px 20px !important;
+  border-radius: 8px;
+  transition: 0.3s;
+  box-shadow: 0 0 15px rgba(236, 64, 122, 0.5);
+}
+
+.about-btn:hover {
+  background-color: #ff3385;
+  box-shadow: 0 0 15px #ff4da6, 0 0 30px #ff4da6;
+  transform: scale(1.05);
+}
+
+.about-img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+  border: 5px solid #ff4da6;
+  transition: all 0.3s ease-in-out;
+  animation-delay: 0.3s;
+}
+
+.about-img:hover {
+  box-shadow: 0 0 20px rgba(255, 77, 109, 1), 0 0 40px rgba(255, 77, 109, 0.8);
+  transform: scale(1.1);
+}
+
+.custom-progress {
+  height: 8px;
+}
+
+.custom-progress .progress-bar {
+  transition: width 1.5s ease-in-out;
+}
+
+/* Services */
+.services {
+  background-color: #111;
+  font-family: "Inter", sans-serif;
+}
+
+.service-card {
+  background: #3d3a3a;
+  padding: 30px;
+  border-radius: 10px;
+  transition: 0.3s ease-in-out;
+  color: white;
+  box-shadow: 0 5px 15px rgba(255, 77, 109, 0.1);
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+.service-card:hover {
+  background: #ff4da670;
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(255, 77, 109, 0.8);
+}
+
+.service-icon {
+  font-size: 3rem;
+  margin-bottom: 15px;
+  color: #ff4da6;
+}
+
+/* Portfolio */
+.portfolio {
+  background-color: #000;
+  color: white;
+}
+
+.portfolio-item {
+  color: #ffff;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 5px 15px rgba(255, 77, 109, 0.1);
+}
+
+.portfolio-item img {
+  width: 100%;
+  transition: transform 0.3s ease-in-out;
+}
+
+.portfolio-item:hover img {
+  transform: scale(1.1);
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 77, 109, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.portfolio-item:hover .overlay {
+  opacity: 1;
+}
+
+@keyframes fadeInUp {
   from {
-    transform: rotate(0deg);
+    opacity: 0;
+    transform: translateY(50px);
   }
   to {
-    transform: rotate(360deg);
+    opacity: 1;
+    transform: translateY(0);
   }
+}
+
+.animate {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fadeInUp 1s ease-out forwards;
 }
